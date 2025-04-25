@@ -1,0 +1,94 @@
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - PlaylistPal</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/homeStyle.css" />
+  <style>
+  body {
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .playlist-section {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .playlist-section::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 200px;
+    height: 200px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/727/727245.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 1;
+  }
+
+  .playlist-section::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    background-image: url('/images/back.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 1;
+  }
+
+  .card {
+    position: relative;
+    z-index: 3;
+  }
+
+  h1.text-center {
+    font-size: 2.5rem;
+    color: #4b0082;
+    font-weight: 700;
+  }
+
+  .btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+  }
+
+  .btn-primary:hover {
+    background-color: #5a32a3;
+    border-color: #5a32a3;
+  }
+</style>
+
+</head>
+
+
+  {{> navbarAfterLogin}}
+   <div class="playlist-section">
+    <h1 class="text-center mb-4">🎵 Create Playlists</h1>
+
+    <!-- Create New Playlist -->
+    <div class="card mb-4 p-4 shadow-sm">
+      <form id="create-playlist-form" class="d-flex flex-column flex-md-row align-items-center gap-3">
+        <input type="text" id="playlist-name" name="name" class="form-control" placeholder="New Playlist Name" required />
+        <button type="submit" class="btn btn-primary">Create Playlist</button>
+      </form>
+      <div id="playlist-msg" class="text-success mt-2"></div>
+    </div>
+
+   </div>
+
+  <script src="/js/view-edit-playlist.js"></script>
+  <script src="/js/createPlaylist.js"></script>
+  <script src="/js/logout.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,118 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome - PlaylistPal</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/homeStyle.css" />
+  <style>
+ body {
+  background: linear-gradient(to bottom right, #e0c3fc, #8ec5fc);
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.welcome-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.welcome-image:hover {
+  transform: scale(1.05);
+}
+
+.welcome-btn {
+  font-weight: 500;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.btn-primary:hover {
+  background-color: #5a32a3;
+  border-color: #5a32a3;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+h2.text-primary {
+  font-size: 2.5rem;
+  color: #5a32a3;
+  text-shadow: 2px 2px 5px rgba(111, 66, 193, 0.3);
+}
+
+p.text-muted {
+  font-size: 1.2rem;
+  color: #6c757d;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+}
+
+  </style>
+</head>
+
+{{> navbarAfterLogin}}
+
+<section class="py-5">
+  <div class="container">
+    <div class="welcome-card text-center">
+      <h2 class="text-primary fw-bold">Welcome, {{{username}}} 👋</h2>
+      <img src="/images/undraw_playlist_lwhi.png" alt="PlaylistPal" width="70%" height="70%" class="welcome-image mb-4" />
+      <p class="fs-5 text-muted mt-3">Create, manage, and groove with your playlists at PlaylistPal. Your personal music hub starts here!</p>
+
+      <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+        <a href="/profile" class="btn btn-primary welcome-btn"><i class="fa-solid fa-user"></i> View Profile</a>
+        <a href="/my-playlists" class="btn btn-success welcome-btn"><i class="fa-solid fa-music"></i> Manage Playlists</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{{>footer}}
+
+<script src="/js/logout.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>

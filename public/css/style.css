@@ -1,0 +1,39 @@
+/* Global body styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero-about {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* Image Carousel */
+.carousel-inner img {
+  max-height: 500px; /* Adjust height to fit smaller images */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Features Section */
+.features i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Footer Styling */
+footer {
+  padding: 30px 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+/* Additional custom styles for tech stack badges */
+.badge {
+  font-size: 1.2rem;
+}

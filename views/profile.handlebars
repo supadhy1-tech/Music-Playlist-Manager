@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - PlaylistPal</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/homeStyle.css">
+  <style>
+    body {
+  background: linear-gradient(to bottom right, #d35cb1, #5a32a3);
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 40px rgba(111, 66, 193, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.profile-card::before,
+.profile-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-image: url('/images/back.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.06;
+  z-index: 1;
+}
+
+.profile-card::before {
+  top: -40px;
+  left: -40px;
+}
+
+.profile-card::after {
+  bottom: -40px;
+  right: -40px;
+}
+
+h2.text-primary {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5a32a3;
+  position: relative;
+  z-index: 3;
+}
+
+.profile-image img {
+  border: 5px solid #6f42c1;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(111, 66, 193, 0.3);
+}
+
+.btn-outline-primary,
+.btn-outline-danger {
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content {
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+{{>navbarAfterLogin}}
+
+<!-- PROFILE SECTION -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5 text-primary fw-bold">Welcome, {{username}} 👋</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card profile-card p-4">
+          <div class="d-flex flex-column align-items-center mb-4 text-center">
+            <div class="profile-image mb-3">
+             
+            </div>
+            <div>
+              <h3 class="fw-bold mb-1">{{username}}</h3>
+              <p class="mb-0 text-muted"><i class="fas fa-envelope me-2 text-secondary"></i>{{email}}</p>
+              <p class="text-muted"><i class="fas fa-calendar-alt me-2 text-secondary"></i>Joined: {{joinedDate}}</p>
+            </div>
+          </div>
+
+          <div class="d-grid gap-3 mt-4">
+            <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+              <i class="fas fa-edit me-2"></i>Edit Profile
+            </button>
+            <button class="btn btn-outline-danger btn-lg" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+              <i class="fas fa-trash-alt me-2"></i>Delete Account
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Edit Profile Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form id="edit-profile-form" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="editProfileModalLabel">Edit Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" name="username" id="username" value="{{username}}" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" id="email" value="{{email}}" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">New Password <small class="text-muted">(leave blank to keep current)</small></label>
+          <input type="password" class="form-control" name="password" id="password" placeholder="Enter new password (optional)">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="deleteAccountModalLabel">Confirm Account Deletion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="fw-semibold">Are you sure you want to delete your account? This action <strong>cannot be undone</strong>.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="confirm-delete-btn" class="btn btn-danger">Yes, Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{>footer}}
+<script src="/js/edit-delete-user.js"></script>
+<script src="/js/logout.js"></script>  
+<script src="/js/bootstrap.bundle.min.js"></script> 
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Playlist Manager</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/homeStyle.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <!-- HERO SECTION -->
+<section class="hero text-white text-center py-5" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/hero-image.jpg') center/cover no-repeat;">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Welcome to PlaylistPal</h1>
+    <p class="lead">Manage your vibes, one playlist at a time 🎶</p>
+    
+    <div class="mt-4">
+      {{#unless logged_in}}
+        <a href="/signup" class="btn btn-light btn-lg me-2">Sign Up</a>
+        <a href="/login" class="btn btn-outline-light btn-lg">Login</a>
+      {{else}}
+        <a href="/welcomePage" class="btn btn-primary btn-lg me-2">Go to Home Page</a>
+      {{/unless}}
+    </div>
+  </div>
+</section>
+
+
+  <!-- FEATURES -->
+  <section class="py-5 text-center features">
+    <div class="container">
+      <h2 class="mb-4">Features</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <i class="fas fa-music text-primary"></i>
+          <h5>Create Playlists</h5>
+          <p>Build and manage your favorite playlists effortlessly.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-random text-success"></i>
+          <h5>Smart Shuffle</h5>
+          <p>Enjoy randomized tracks with smart ordering.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-user text-warning"></i>
+          <h5>User Profiles</h5>
+          <p>Customize your music experience and account settings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREVIEW / SCREENSHOTS -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Preview</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+          <img src="/images/screenshotofapp.png"  class="img-fluid screenshot shadow" alt="App screenshot">
+        </div>
+          <div class="col-md-6 mb-3">
+          <img src="/images/screnshots1.png"  class="img-fluid screenshot shadow" alt="App screenshot">
+        </div>
+    
+        <div class="col-md-6 mb-3">
+          <img src="/images/features.jpg" class="img-fluid screenshot shadow" alt="Playlist feature">
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <script src="/js/about.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

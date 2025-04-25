@@ -1,0 +1,95 @@
+{{! views/about.handlebars }}
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+
+<!-- Hero Section -->
+<section class="hero text-white text-center py-5" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Music, Organized Your Way</h1>
+    <p class="lead">Discover. Create. Share your vibe.</p>
+  </div>
+</section>
+
+<!-- Mission Section -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="mb-3">🎯 Our Mission</h2>
+    <p class="fs-5">PlaylistPal started with one goal: to make playlist management effortless and fun. Whether you're curating the perfect study vibe or a party mix, we give you the tools to take control of your sound.</p>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">💡 Cool Features</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">🎵 Create & Save Custom Playlists</div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">🔍 Search Songs by Genre, Mood, Artist</div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">👥 Share with Friends</div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">🔒 Secure User Accounts</div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm">🌙 Dark Mode Ready</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Creator Section -->
+<!-- CREATOR SECTION -->
+<!-- CREATOR SECTION -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">🖼️ Our Story in Images</h2>
+    <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/images/friendsEnjoyingMusic.PNG" class="d-block w-100 rounded img-fluid" alt="Friends enjoying music" >
+        </div>
+        <div class="carousel-item">
+          <img src="/images/babywithHeadphone.jpg" class="d-block w-100 rounded img-fluid" alt="Baby with headphones" >
+        </div>
+        <div class="carousel-item">
+          <img src="/images/illustration.jpg" class="d-block w-100 rounded img-fluid" alt="Illustration" >
+        </div>
+      </div>
+      <!-- Previous Button -->
+      <button class="carousel-control-prev btn-sm" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <!-- Next Button -->
+      <button class="carousel-control-next btn-sm" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Tech Stack Section -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-4">📈 Tech Stack</h2>
+    <p class="fs-5">Built with modern web technologies</p>
+    <div class="d-flex justify-content-center flex-wrap gap-4 mt-3">
+      <span class="badge bg-success fs-6">Node.js</span>
+      <span class="badge bg-dark fs-6">Express</span>
+      <span class="badge bg-warning text-dark fs-6">MongoDB</span>
+      <span class="badge bg-danger fs-6">Handlebars</span>
+      <span class="badge bg-primary fs-6">Bootstrap</span>
+    </div>
+  </div>
+</section>
+
+<!-- Ensure Bootstrap JS is properly included -->
+<script src="js/bootstrap.bundle.min.js"></script>
