@@ -1,10 +1,10 @@
-require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const helmet = require('helmet');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const path = require('path');
+require('dotenv').config();
 
 // Load sequelize config (make sure ./config/database.js exports sequelize properly)
 const { sequelize } = require('./config/database');
